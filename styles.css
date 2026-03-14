@@ -145,14 +145,21 @@ header {
 .hero-image .image-placeholder {
   width: 100%;
   aspect-ratio: 1/1;
-  background-color: #e0f2fe; /* cyan-100 */
-  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* unique blob shape */
+  background-color: #e0f2fe;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #0ea5e9;
   border: 4px solid #0ea5e9;
   box-shadow: 0 20px 30px -10px rgba(14,165,233,0.3);
+  overflow: hidden; /* <-- this clips the image to the shape */
+}
+
+.hero-image .image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* <-- makes the image fill the shape without distortion */
+  display: block;
 }
 
 /* ===== SECTIONS ===== */
